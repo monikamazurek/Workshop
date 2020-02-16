@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation</title>
+</head>
+<body>
+<table border="1">
+    <h>Create Your Reservation</h>
+    <tr>
+        <td>Date</td>
+        <td>Room ID</td>
+        <td>Comments</td>
+    </tr>
+    {% for item in data %}
+        <tr>
+            <td>{{ item.0 }}</td>
+            <td>{{ item.1 }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<form action="#" method="POST">
+    {% csrf_token %}
+    <label>
+        <input type="text" name="date">
+    </label>
+    <label>
+        <input type="text" name="room_id">
+    </label>
+    <label>
+        <input type="text" name="comments">
+    </label>
+    <input type="submit">
+</form>
+</body>
+</html>
